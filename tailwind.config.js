@@ -8,7 +8,7 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
-    container: {
+    container: {  
       center: true,
       padding: "2rem",
       screens: {
@@ -24,7 +24,7 @@ module.exports = {
         },
       ],
       "heading1-semibold": [
-        "36px",
+        "36px", 
         {
           lineHeight: "140%",
           fontWeight: "600",

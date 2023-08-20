@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer components {
   /* main */
   .main-container {
@@ -15,8 +19,16 @@
 
   /* Activity */
   .activity-card {
-    @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
-  }
+  @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
+}
+
+.activity-card {
+  @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
+}
+
+.text-right {
+  text-align: right;
+}
 
   /* No Result */
   .no-result {
@@ -47,7 +59,7 @@
   }
 
   .user-card_btn {
-    @apply h-auto min-w-[74px] rounded-lg bg-primary-500 text-[12px] text-light-1 !important;
+    @apply h-auto min-w-[74px] rounded-lg bg-sky-500 text-[12px] text-light-1 !important;
   }
 
   .searchbar {
@@ -59,7 +71,7 @@
   }
 
   .topbar {
-    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-2 px-6 py-3;
+    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-3 px-6 py-3;
   }
 
   .bottombar {
@@ -114,48 +126,53 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #7878a3;
   }
+  .cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {
+    @apply max-sm:hidden;
+  }
+  
+  .cl-organizationSwitcherTrigger
+    .cl-organizationPreview
+    .cl-organizationPreviewTextContainer {
+    @apply max-sm:hidden;
+  }
+  
+  /* Shadcn Component Styles */
+  
+  /* Tab */
+  .tab {
+    @apply flex min-h-[50px] flex-1 items-center gap-3 bg-dark-2 text-light-2 data-[state=active]:bg-[#0e0e12] data-[state=active]:text-light-2 !important;
+  }
+  
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+  
+  /* Account Profile  */
+  .account-form_image-label {
+    @apply flex h-24 w-24 items-center justify-center rounded-full bg-dark-4 !important;
+  }
+  
+  .account-form_image-input {
+    @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
+  }
+  
+  .account-form_input {
+    @apply border border-dark-4 bg-dark-3 text-light-1 !important;
+  }
+  
+  /* Comment Form */
+  .comment-form {
+    @apply mt-10 flex items-center gap-4 border-y border-y-dark-4 py-5 max-xs:flex-col !important;
+  }
+  
+  .comment-form_btn {
+    @apply rounded-3xl bg-sky-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
+  }
+  
+  .sky_gradient {
+    @apply bg-gradient-to-r from-sky-500 via-blue to-gray-800 bg-clip-text text-transparent;
+  }
+  
 }
 
 /* Clerk Responsive fix */
-.cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {
-  @apply max-sm:hidden;
-}
-
-.cl-organizationSwitcherTrigger
-  .cl-organizationPreview
-  .cl-organizationPreviewTextContainer {
-  @apply max-sm:hidden;
-}
-
-/* Shadcn Component Styles */
-
-/* Tab */
-.tab {
-  @apply flex min-h-[50px] flex-1 items-center gap-3 bg-dark-2 text-light-2 data-[state=active]:bg-[#0e0e12] data-[state=active]:text-light-2 !important;
-}
-
-.no-focus {
-  @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
-}
-
-/* Account Profile  */
-.account-form_image-label {
-  @apply flex h-24 w-24 items-center justify-center rounded-full bg-dark-4 !important;
-}
-
-.account-form_image-input {
-  @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
-}
-
-.account-form_input {
-  @apply border border-dark-4 bg-dark-3 text-light-1 !important;
-}
-
-/* Comment Form */
-.comment-form {
-  @apply mt-10 flex items-center gap-4 border-y border-y-dark-4 py-5 max-xs:flex-col !important;
-}
-
-.comment-form_btn {
-  @apply rounded-3xl bg-primary-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
-}

@@ -16,10 +16,10 @@ const userSchema = new mongoose.Schema({
   },
   image: String,
   bio: String,
-  threads: [
+  waves: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Thread",
+      ref: "Wave",
     },
   ],
   onboarded: {
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
       ref: "Community",
     },
   ],
-});
+})
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
 
